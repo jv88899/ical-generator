@@ -8,7 +8,7 @@ export default function App() {
 
   const generateiCalText = () => {
     const newiCal = `Thank you for registering for this class. \\n \\nYou will receive an email with important information and instructions prior to the start of the class. \\n \\nWebex Link: ${url} \\nPassword: ${password}`;
-    setiCalText(newiCal)
+    setiCalText(newiCal);
   };
 
   const handleChange = e => {
@@ -18,7 +18,7 @@ export default function App() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    generateiCalText()
+    generateiCalText();
   };
 
   return (
@@ -40,6 +40,11 @@ export default function App() {
         <button type="submit">Create iCal Text</button>
       </form>
       <div>{iCalText && <p>{iCalText}</p>}</div>
+      <div>
+        <span>
+          <button>Copy</button>
+        </span>
+      </div>
     </div>
   );
 }
