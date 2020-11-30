@@ -15,6 +15,7 @@ export default function App() {
           <label htmlFor="password">Password</label>
           <input type="text" name="password" />
         </div>
+        <button type="submit">Create iCal Text</button>
       </form>
       <div>
       {iCalText && <p>{iCalText}</p>}
