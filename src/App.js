@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 export default function App() {
+  const [iCalText, setiCalText] = useState('')
+
   return (
     <div>
       <form>
@@ -14,6 +16,9 @@ export default function App() {
           <input type="text" name="password" />
         </div>
       </form>
+      <div>
+      {iCalText && <p>{iCalText}</p>}
+      </div>
     </div>
   );
 }
