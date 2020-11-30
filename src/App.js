@@ -4,8 +4,16 @@ import "./style.css";
 export default function App() {
   return (
     <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
+      <form>
+        <div>
+          <label htmlFor="url">URL</label>
+          <input type="text" name="url" />
+        </div>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input type="text" name="password" />
+        </div>
+      </form>
     </div>
   );
 }
