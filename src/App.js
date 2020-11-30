@@ -3,6 +3,10 @@ import "./style.css";
 
 export default function App() {
   const [iCalText, setiCalText] = useState("");
+  const [url, setURL] = useState('')
+  const [password, setPassword] = useState('')
+
+  const generateiCalText = () => {}
 
   const handleSubmit = e => {
     e.preventDefault();
