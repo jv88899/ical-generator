@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import "./style.css";
 
 export default function App() {
-  const [iCalText, setiCalText] = useState('')
+  const [iCalText, setiCalText] = useState("");
+
+  const handleSubmit = e => {
+    e.preventDefault();
+  };
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="url">URL</label>
           <input type="text" name="url" />
@@ -17,9 +21,7 @@ export default function App() {
         </div>
         <button type="submit">Create iCal Text</button>
       </form>
-      <div>
-      {iCalText && <p>{iCalText}</p>}
-      </div>
+      <div>{iCalText && <p>{iCalText}</p>}</div>
     </div>
   );
 }
