@@ -11,6 +11,15 @@ export default function App() {
     setiCalText(newiCal);
   };
 
+  const copyiCalText = () => {
+    const tempElement = document.createElement("textarea");
+    tempElement.value = iCalText;
+    document.body.appendChild(tempElement);
+    tempElement.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempElement);
+  };
+
   const handleChange = e => {
     if (e.target.name === "url") setURL(e.target.value);
     if (e.target.name === "password") setPassword(e.target.value);
@@ -39,10 +48,10 @@ export default function App() {
         </div>
         <button type="submit">Create iCal Text</button>
       </form>
-      <div>{iCalText && <p>{iCalText}</p>}</div>
+      <div className="ical-text">{iCalText && <p>{iCalText}</p>}</div>
       <div>
         <span>
-          <button>Copy</button>
+          <button onClick={copyiCalText}>Copy</button>
         </span>
       </div>
     </div>
